@@ -1,0 +1,243 @@
+body{
+  font-size: 15px;
+  line-height: 1.5;
+  word-spacing: .18;
+  letter-spacing: .12;
+  box-sizing: border-box;
+  font-family: 'Spartan', sans-serif;
+}
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+:root{
+  --White: hsl(0, 50%, 100%);
+  /*Primary*/
+  --Des-Dark-Cyan: hsl(180, 29%, 50%);
+  /*Neutral*/
+  --Light-Grayish-Cyan-bg: hsl(180, 52%, 96%);
+  --Light-Grayish-Cyan-Filter: hsl(180, 31%, 95%);
+  --Dark-Grayish-Cyan: hsl(180, 8%, 52%);
+  --Very-Dark-Grayish-Cyan: hsl(180, 14%, 20%);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-weight: 500;
+}
+h1{
+  font-weight: 700;
+}
+img,
+source{
+  max-width: 100%;
+  object-fit: cover;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+li{
+  color: var(--White);
+  font-weight: 500;
+}
+button{
+  border: none;
+  background: none;
+}
+i{
+  font-size: inherit;
+  font-weight: 500;
+  color: inherit;
+}
+/*styles*/
+.wrapper{
+  max-width: 800px;
+  margin-inline: auto;
+  height: 100%;
+  padding: 1em;
+}
+.header{
+  min-height: 30vh;
+  background-image: url(./images/bg-header-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--Des-Dark-Cyan);
+}
+.main{
+  background-color: var(--Light-Grayish-Cyan-bg);
+  min-height: 100vh;
+  padding: 2em 1em;
+}
+.margin--top{
+  margin-top: 2em;
+}
+.job{
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  background: var(--White);
+  margin-block: 1em;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 15px var(--Light-Grayish-Cyan-Filter);
+}
+.job--radius{
+  border-left: 2px solid var(--Des-Dark-Cyan);
+  border-radius: 15px;
+}
+.job__figure{
+  width: 25%;
+  border-radius: 50%;
+}
+.job__content > *{
+  margin-bottom: .5em;
+}
+.job__company{
+  color: var(--Des-Dark-Cyan);
+  display: inline-block;
+}
+.job__custom-btn{
+  padding: .5em;
+  color: var(--White);
+  border-radius: 15px;
+  display: inline-block;
+  margin-left: .5em;
+}
+.new--btn{
+  background-color: var(--Des-Dark-Cyan);
+}
+.featured--btn{
+  background-color: black;
+}
+.job__role{
+  color: var(--Very-Dark-Grayish-Cyan);
+  font-size: 1.1em;
+}
+.job__status{
+  color: #A9A9A9;
+}
+.dot--align{
+  vertical-align: middle;
+}
+.job__filter{
+  border-top: 1px solid var(--Des-Dark-Cyan);
+  padding-block: 1em;
+}
+.job__filter{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5em;
+}
+.job__btn{
+  border: none;
+  background: var(--Light-Grayish-Cyan-Filter);
+  color: var(--Des-Dark-Cyan);
+  padding: .8em;
+  display: inline-block;
+  font-size: 1em;
+  margin-top: .5em;
+}
+.job--1,
+.job--2{
+  border-left: 2px solid var(--Des-Dark-Cyan);
+}
+.job--post,
+.dot--align,
+.job--contract,
+.Job--locate{
+  vertical-align: middle;
+}
+.modal{
+  background: white;
+  position: absolute;
+  top: 25%;
+  min-width: 300px;
+  left: 50%;
+  transform: translate(-50%, 25%);
+  border: 1px solid var(--Des-Dark-Cyan);
+  border-radius: 8px;
+  padding-bottom: 1em;
+  display: none;
+}
+.show--modal{
+  display: flex;
+}
+.modal__div{
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid var(--Des-Dark-Cyan);
+  margin: 1em 0 0 1em;
+}
+.modal__text{
+  display: inline-block;
+  margin: .2em;
+  color: var(--Des-Dark-Cyan);
+}
+.modal__remove{
+  display: inline-block;
+  padding: .5em;
+  background: var(--Des-Dark-Cyan);
+  border-radius: 0px 5px 5px 0px;
+  font-size: 1.5em;
+}
+.modal__text,
+.modal__remove{
+  vertical-align: middle;
+}
+.modal__clear{
+  text-decoration: underline;
+  color: var(--Des-Dark-Cyan);
+  font-size: 1em;
+  display: inline-block;
+  margin-left: auto;
+  align-self: center;
+  margin-right: 1em;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+@media only screen and (max-width: 400px){
+  .job{
+    margin-top: 3em;
+  }
+  .job__figure{
+    overflow: hidden;
+    transform: translateY(-60%);
+    margin-bottom: -15%;
+  }
+}
+@media only screen and (min-width: 400px){
+  .job{
+    flex-direction: row;
+  }
+  .job__figure {
+    transform: none;
+    margin-bottom: 0%;
+    width: auto;
+  }
+  .job__content{
+    margin-left: 1em;
+  }
+  .job__filter{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    border: none;
+  }
+  .modal{
+    width: 800px;
+    top: 28%;
+  }
+}
